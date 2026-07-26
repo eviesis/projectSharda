@@ -96,7 +96,7 @@ p { margin: 0; }
    NAV
    ===================================================== */
 .site-nav {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 100;
   background: rgba(246, 239, 225, 0.92);
@@ -109,12 +109,15 @@ p { margin: 0; }
   align-items: center;
   justify-content: space-between;
   height: 76px;
+   width: 100%;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
+
+   margin-right: auto;
 }
 .brand-logo {
   height: 34px;
@@ -137,7 +140,7 @@ p { margin: 0; }
 }
 
 .nav-links {
-  display: none;
+  display: flex;
   align-items: center;
   gap: 30px;
   font-size: 0.9rem;
