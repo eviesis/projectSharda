@@ -474,9 +474,6 @@ p { margin: 0; }
     overflow-x: auto;
   }
 }
-@media (min-width: 780px) {
-  .model-step:not(:last-child)::after { display: block; }
-}
 
 /* =====================================================
    IMPACT NUMBERS
