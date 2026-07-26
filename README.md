@@ -1,32 +1,45 @@
 # Project SHARDA — Website
 
-## Structure
+Everything lives in ONE flat folder now — no subfolders — so that dragging
+these files into GitHub's upload box (or replacing the ones already there)
+always matches what the HTML expects. Don't put anything into a subfolder.
+
+## Files
 ```
-index.html              → homepage (short, single scroll)
-pages/                   → one file per nav destination (about, programmes,
-                           explorer, stories, impact, involved, resources,
-                           news, contact). All except about.html are
-                           placeholder "coming soon" pages right now —
-                           styled and linked, content comes in the next pass.
-assets/style.css         → all design tokens, layout, components
-assets/main.js           → mobile nav toggle, scroll-reveal, impact counters
+index.html         → homepage (short, single scroll)
+about.html         → About page
+programmes.html    → placeholder — content comes next pass
+explorer.html      → placeholder — Heritage Explorer / interactive map, next pass
+stories.html       → placeholder
+impact.html        → placeholder
+involved.html      → placeholder — Partner / Volunteer / Donate
+resources.html     → placeholder
+news.html          → placeholder
+contact.html       → placeholder
+style.css          → all design tokens, layout, components
+main.js            → mobile nav toggle, scroll-reveal, impact counters
 ```
+
+## Fixing your current repo (sharda-heritage)
+Your repo currently has `style.css`, `main.js`, and `about.html` at the root
+(good — flat is what we want), but the old `index.html` was pointing to
+`assets/style.css` and `pages/about.html`, which don't exist there. That's
+why the page loaded with no styling.
+
+**To fix it:** in your repo, click into `index.html` → the pencil/edit icon →
+select all → delete → paste in the new `index.html` content from this folder
+→ commit. Do the same for `about.html` (its paths changed too). Then add the
+7 new placeholder pages (`programmes.html`, `explorer.html`, `stories.html`,
+`impact.html`, `involved.html`, `resources.html`, `news.html`, `contact.html`)
+using **Add file → Upload files**, dragging them in directly — since
+everything here is flat with no folders, there's nothing to lose this time.
 
 ## Publishing to GitHub Pages
-1. Create a new repo on GitHub — name it whatever you like (e.g. `sharda-heritage`).
-   The repo name is entirely your choice.
-2. Push these files to the repo root (so `index.html` sits at the top level).
-3. In the repo: **Settings → Pages → Source → Deploy from branch → main → / (root)**.
-4. Your site will be live at `https://<your-username>.github.io/<repo-name>/`.
-
-Your GitHub username will still show in that URL — that's how GitHub Pages
-routes it. If you want the URL to show only your own domain (no GitHub trace
-at all), buy a custom domain and add a `CNAME` file pointing to it, then set
-it under Settings → Pages → Custom domain.
+Settings → Pages → Source → Deploy from branch → `main` → `/ (root)`.
+Site will be live at `https://<your-username>.github.io/<repo-name>/`.
+Your username stays visible in that URL unless you add a custom domain later.
 
 ## Next steps once homepage is approved
-- Build out each `pages/*.html` file with real content (About, Programmes,
-  Heritage Explorer with the interactive map, etc.)
-- Replace the placeholder `data-count-to="0"` values in the Impact section
-  with real numbers.
-- Swap the SVG motif/pattern accents for real photography once available.
+- Build out programmes.html, explorer.html, etc. with real content
+- Replace placeholder `data-count-to="0"` in index.html with real numbers
+- Swap SVG accents for real photography once available
